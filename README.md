@@ -1,8 +1,7 @@
 # Edhouse entry task
 
 ## Build project
-- install Xmake build utility
-    - https://xmake.io/#/
+- install Xmake build utility - https://xmake.io/#/
 - to build project:
 ```colsole
 xmake
