@@ -2,12 +2,13 @@
 
 ## Build project
 - install Xmake build utility - https://xmake.io/#/
-- to build project:
+- additionaly for Vs Code, download Xmake extesion
+- build project
 ```colsole
 xmake
 ```
 - copy trace.txt from source directory to directory, where is final executable file located
-- to build project:
+- run project
 ```colsole
 xmake run
 ```
