@@ -33,6 +33,7 @@
 
 # Folders
 /build
+/.vscode
 
 # Xmake cache
 .xmake/
