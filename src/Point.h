@@ -7,9 +7,9 @@
 
 #include "Move.h"
 
-using std::string;
 using std::cout;
 using std::endl;
+using std::string;
 
 class Point
 {
@@ -21,7 +21,7 @@ public:
     Point(int x, int y);
     Point(string s);
     ~Point() = default;
-    Point newPoint(Move& move);
+    Point newPoint(Move &move);
 
     string toString();
     void print(std::ostream &stream = std::cout);
@@ -29,4 +29,4 @@ public:
     int getY();
 };
 
-#endif //UKOL_RESENI_POINT_H
+#endif // UKOL_RESENI_POINT_H

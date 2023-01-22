@@ -12,8 +12,8 @@
 #include "PointData.h"
 
 using std::string;
-using std::vector;
 using std::unordered_map;
+using std::vector;
 
 using PathPart = std::pair<string, std::vector<PointData>>;
 
@@ -27,9 +27,9 @@ public:
     ~Path();
 
     Path *copyCollisions(int min, int max);
-    bool validDistance(vector<PointData>& data, int min, int max);
-    bool validIds(vector<PointData>& data);
-    bool validPointData(vector<PointData>& data, int min, int max);
+    bool validDistance(vector<PointData> &data, int min, int max);
+    bool validIds(vector<PointData> &data);
+    bool validPointData(vector<PointData> &data, int min, int max);
 
     void insert(Point point, PointData data);
     void insert(Point point, int id, int distance);
@@ -48,5 +48,4 @@ public:
     PathPart chooseFirst();
 };
 
-
-#endif //UKOL_RESENI_PATH_H
+#endif // UKOL_RESENI_PATH_H

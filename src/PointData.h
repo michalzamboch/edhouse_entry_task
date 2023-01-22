@@ -7,7 +7,8 @@
 #include <iostream>
 #include <ostream>
 
-class PointData {
+class PointData
+{
 private:
     int id;
     int steps;
@@ -22,4 +23,4 @@ public:
     int getId();
 };
 
-#endif //UKOL_RESENI_POINTDATA_H
+#endif // UKOL_RESENI_POINTDATA_H

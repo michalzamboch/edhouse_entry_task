@@ -15,14 +15,15 @@
 #include "Point.h"
 #include "Path.h"
 
-using std::unordered_map;
-using std::vector;
-using std::string;
-using std::ifstream;
 using std::cout;
 using std::endl;
+using std::ifstream;
+using std::string;
+using std::unordered_map;
+using std::vector;
 
-class Map {
+class Map
+{
 private:
     string filePath;
     ifstream *file;
@@ -49,4 +50,4 @@ public:
     void showResult();
 };
 
-#endif //UKOL_RESENI_MAP_H
+#endif // UKOL_RESENI_MAP_H

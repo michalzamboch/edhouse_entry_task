@@ -2,12 +2,13 @@
 
 vector<string> tokenize(string s, string del = " ")
 {
-    int start = 0;
-    int end = s.find(del);
+    size_t end = s.find(del);
+    size_t start = 0;
 
     vector<string> columns;
 
-    while (end != -1) {
+    while (end != -1)
+    {
         columns.push_back(s.substr(start, end - start));
         start = end + del.size();
         end = s.find(del, start);
@@ -56,7 +57,7 @@ void printVector(vector<vector<string>> strVecs)
     }
 }
 
-void eraseSubStr(std::string & mainStr, const std::string & toErase)
+void eraseSubStr(std::string &mainStr, const std::string &toErase)
 {
     size_t pos = mainStr.find(toErase);
     if (pos != std::string::npos)

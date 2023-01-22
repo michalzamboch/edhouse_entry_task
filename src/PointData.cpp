@@ -6,18 +6,22 @@ PointData::PointData(int _id, int _steps)
     this->steps = _steps;
 }
 
-std::string PointData::toString() {
+std::string PointData::toString()
+{
     return "(" + std::to_string(this->id) + ". " + std::to_string(this->steps) + ")";
 }
 
-void PointData::print(std::ostream &stream) {
+void PointData::print(std::ostream &stream)
+{
     stream << this->toString() << "\n";
 }
 
-int PointData::getSteps() {
+int PointData::getSteps()
+{
     return this->steps;
 }
 
-int PointData::getId() {
+int PointData::getId()
+{
     return this->id;
 }

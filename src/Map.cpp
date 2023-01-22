@@ -1,18 +1,21 @@
 #include "Map.h"
 #include "General.h"
 
-Map::Map(string filePath) {
+Map::Map(string filePath)
+{
     this->filePath = filePath;
     this->paths = new Path();
     this->collisions = new Path();
 }
 
-Map::~Map() {
+Map::~Map()
+{
     delete this->paths;
     delete this->collisions;
 }
 
-vector<string> Map::loadData() {
+vector<string> Map::loadData()
+{
     cout << "Loading data..." << endl;
     this->file = new ifstream(this->filePath);
     if (!file->is_open())
@@ -26,7 +29,7 @@ vector<string> Map::loadData() {
     for (int i = 0; i < 3; i++)
     {
         string line;
-        getline (*file,line);
+        getline(*file, line);
         lines.push_back(line);
     }
 
@@ -34,14 +37,16 @@ vector<string> Map::loadData() {
     return lines;
 }
 
-void Map::setCoordinates(string s) {
+void Map::setCoordinates(string s)
+{
     cout << "Setting coordinates..." << endl;
     auto strCoordinace = tokenize(s, "-");
     this->minDistance = std::stoi(strCoordinace.at(0));
     this->maxDistance = std::stoi(strCoordinace.at(1));
 }
 
-vector<Move> Map::makeMoves(string s) {
+vector<Move> Map::makeMoves(string s)
+{
     cout << "Making moves..." << endl;
     auto strDriver = tokenize(s, ",");
     vector<Move> moves;
@@ -55,10 +60,11 @@ vector<Move> Map::makeMoves(string s) {
     return moves;
 }
 
-vector<Point> Map::executeMoves(vector<Move> moves) {
+vector<Point> Map::executeMoves(vector<Move> moves)
+{
     cout << "Executing moves..." << endl;
     vector<Point> points;
-    Point tmpPoint(0,0);
+    Point tmpPoint(0, 0);
     points.push_back(tmpPoint);
 
     for (auto &x : moves)
@@ -72,7 +78,8 @@ vector<Point> Map::executeMoves(vector<Move> moves) {
     return points;
 }
 
-void Map::processData(vector<string> data) {
+void Map::processData(vector<string> data)
+{
     cout << "Start processing data..." << endl;
     if (data.size() < 3)
     {
@@ -82,7 +89,7 @@ void Map::processData(vector<string> data) {
     }
 
     std::ofstream resultsFile;
-    resultsFile.open (this->resultFileName());
+    resultsFile.open(this->resultFileName());
 
     this->setCoordinates(data.at(0));
     auto moves1 = makeMoves(data.at(1));
@@ -105,11 +112,13 @@ void Map::processData(vector<string> data) {
     cout << "End processing data..." << endl;
 }
 
-PathPart Map::getResultCollision() {
+PathPart Map::getResultCollision()
+{
     return this->collisions->chooseFirst();
 }
 
-void Map::showResult() {
+void Map::showResult()
+{
     if (this->collisions->size() == 0)
     {
         cout << "There is no suitable result." << endl;
@@ -122,11 +131,12 @@ void Map::showResult() {
         cout << " -> [" << p.getX() << ":" << p.getY() << "]" << endl;
 
         for (auto &driver : collision.second)
-            cout << " -> " << "Driver number " << driver.getId() << " arrived after: " << driver.getSteps() << endl;
+            cout << " -> Driver number " << driver.getId() << " arrived after: " << driver.getSteps() << endl;
     }
 }
 
-string Map::resultFileName() {
+string Map::resultFileName()
+{
     auto copy = this->filePath;
     eraseSubStr(copy, ".txt");
     return copy + "-results.txt";

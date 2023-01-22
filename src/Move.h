@@ -6,7 +6,8 @@
 #include <iostream>
 #include <ostream>
 
-class Move {
+class Move
+{
 private:
     int count;
     char direction;
@@ -24,4 +25,4 @@ public:
     void print(std::ostream &stream = std::cout);
 };
 
-#endif //UKOL_RESENI_MOVE_H
+#endif // UKOL_RESENI_MOVE_H

@@ -1,5 +1,7 @@
 add_rules("mode.debug", "mode.release")
 set_languages("c++17")
+set_warnings("all", "error")
+set_optimize("faster")
 
 target("edhouse_entry_task")
     set_kind("binary")
