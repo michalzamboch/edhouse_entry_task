@@ -45,6 +45,7 @@ void Map::setCoordinates(string s)
     this->maxDistance = std::stoi(strCoordinace.at(1));
 }
 
+
 vector<Move> Map::makeMoves(string s)
 {
     cout << "Making moves..." << endl;
