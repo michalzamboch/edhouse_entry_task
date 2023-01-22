@@ -12,7 +12,6 @@ Point::Point(string s)
     auto vec = tokenize(s, ":");
     this->x = std::stoi(vec.at(0));
     this->y = std::stoi(vec.at(1));
-    ;
 }
 
 string Point::toString()
