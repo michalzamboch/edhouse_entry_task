@@ -6,6 +6,10 @@ set_optimize("faster")
 target("edhouse_entry_task")
     set_kind("binary")
     add_files("src/*.cpp")
+    after_build(function (target)
+        print("binary: %s", target:name())
+        print("target: %s", target:targetfile())
+    end)
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
