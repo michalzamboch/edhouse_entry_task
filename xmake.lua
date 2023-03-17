@@ -1,4 +1,5 @@
 add_rules("mode.debug", "mode.release", "mode.check")
+
 set_languages("c++17")
 set_warnings("all", "error")
 set_optimize("faster")
@@ -8,8 +9,9 @@ target("edhouse_entry_task")
     add_files("src/*.cpp")
     
     after_build(function (target)
-        print("binary: %s", target:name())
+        print("\nbinary: %s", target:name())
         print("target: %s", target:targetfile())
+        os.cp("traces/trace.txt", target:targetdir())
     end)
     
     if is_mode("check") then

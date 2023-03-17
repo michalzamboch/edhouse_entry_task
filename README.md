@@ -7,7 +7,6 @@
 ```colsole
 xmake
 ```
-- copy trace.txt from traces directory to directory with compiled executable file
 - run project
 ```colsole
 xmake run

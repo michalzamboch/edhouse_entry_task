@@ -129,7 +129,7 @@ bool Path::validDistance(vector<PointData> &data, int min, int max)
 bool Path::validIds(vector<PointData> &data)
 {
     auto first = data.at(0).getId();
-    for (int i = 1; i < data.size(); i++)
+    for (unsigned long i = 1; i < (unsigned long)data.size(); i++)
     {
         if (first != data.at(i).getId())
         {
