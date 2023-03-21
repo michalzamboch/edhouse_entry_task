@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    name: Compile Vault
+    name: Compile task
     runs-on: windows-latest
 
     steps:
