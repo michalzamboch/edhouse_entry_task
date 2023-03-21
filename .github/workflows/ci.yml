@@ -4,20 +4,12 @@ on: [push]
 
 jobs:
   build:
-    name: Compile Edhouse entry task - Windows
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - uses: xmake-io/github-action-setup-xmake@v1
-      with:
-        xmake-version: latest
-    - name: Run build script
-      run: xmake
-
-  build:
-    name: Compile Edhouse entry task - Linux
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    
+    name: Compile Edhouse entry task
+    runs-on: ${{ matrix.platform }}
 
     steps:
     - uses: actions/checkout@v1
