@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    uses: xmake-io/github-action-setup-xmake@v1
+    - uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: latest
     - name: Run build script
