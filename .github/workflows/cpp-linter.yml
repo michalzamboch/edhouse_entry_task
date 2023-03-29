@@ -1,10 +1,6 @@
 name: cpp-linter
 
-on:
-  push:
-    paths-ignore: "traces/**"
-  pull_request:
-    paths-ignore: "traces/**"
+on: [push]
 
 jobs:
   cpp-linter:
