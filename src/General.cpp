@@ -2,8 +2,8 @@
 
 vector<string> tokenize(string s, string del = " ")
 {
-    size_t end = s.find(del);
-    size_t start = 0;
+    int end = (int)s.find(del);
+    int start = 0;
 
     vector<string> columns;
 
